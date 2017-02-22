@@ -2,6 +2,11 @@
 
 $players = array(array());
 $sums = array();
+$deck = array();
+ for ($i=1; $i <= 52; $i++) {
+  $deck[] = $i; 
+ }
+ shuffle($deck);
 
 //  function displayArray() {
 //     global $prices;
@@ -70,39 +75,56 @@ $sums = array();
      
 //  }
  
- $deck = array();
- for ($i=1; $i <= 52; $i++) {
-   $deck[] = $i; 
- }
- shuffle($deck);
- //print_r($deck);
- $card = array_pop($deck);
+//  $deck = array();
+//  for ($i=1; $i <= 52; $i++) {
+//   $deck[] = $i; 
+//  }
+//  shuffle($deck);
+//  //print_r($deck);
+//  $card = array_pop($deck);
  
- //echo $card;
+//  //echo $card;
  
  
- function displayRandomImage(){
+//  function displayRandomImage(){
  
-   $suitArray = array("clubs", "diamonds", "hearts", "spades");
-   $randomIndex = rand(0,3);
-   $randomSuit = $suitArray[$randomIndex];
-   echo "<img src='img/cards/$randomSuit/".rand(1,13).".png' />";
+//   $suitArray = array("clubs", "diamonds", "hearts", "spades");
+//   $randomIndex = rand(0,3);
+//   $randomSuit = $suitArray[$randomIndex];
+//   echo "<img src='img/cards/$randomSuit/".rand(1,13).".png' />";
  
- }
+//  }
+ 
  function getHand()
  {
     $suitArray = array("clubs", "diamonds", "hearts", "spades");
     
-     global $players, $sums;
+     global $players, $sums, $deck;
      $sum=0;
      $card;
      for ($i=0; $i<4; $i++)
      {
         while ($sum<35)
          {
-           $randomIndex = rand(0,3);
-           $randomSuit = $suitArray[$randomIndex];
-           $card = rand(1,13);
+           if($deck[sizeof($deck)-1]<=13)
+           {
+               $Index =0;
+           }
+           elseif($deck[sizeof($deck)-1]<=26 && $deck[sizeof($deck)-1]>13)
+           {
+               $Index = 1;
+           }
+           elseif($deck[sizeof($deck)-1]<=39 && $deck[sizeof($deck)-1]>26)
+           {
+               $Index = 2;
+           }
+           else{
+               $Index = 3;
+           }
+           $card = 1+($deck[sizeof($deck)-1]-1)%13;
+           array_pop($deck);
+           
+           $randomSuit = $suitArray[$Index];
            echo "<img src='img/cards/$randomSuit/".$card.".png' />";
            $players[$i][] = $card;
            $sum+=$card;
