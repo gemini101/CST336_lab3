@@ -184,7 +184,7 @@ $deck = array();
     <body>
      <div id="wrapper">
       <div id ="container">
-       <h1>Silverjack</h1>
+       <h1><strong>Silverjack</strong></h1>
        
        <?=getHand()?>
        <div id ="winner">
