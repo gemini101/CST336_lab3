@@ -1,0 +1,38 @@
+#wrapper{
+        width:900px;
+        margin: 0 auto;
+        background-color: white !important; 
+    }
+
+#container{
+        border-style: solid;
+        padding-left: 5.5em;
+        padding-right:5.5em;
+        padding-bottom: 2em;
+        border-radius: 1em;
+    
+    }
+    
+h1{
+    text-align: center;
+    background-color: #8C8C8C;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-left:-1.8em;
+    margin-right:-1.8em;
+    border-radius: .3em;
+    color: white;
+}
+
+#winner{
+    text-align: center;
+    font-size: 1.5em;
+    margin-top:.2em;
+    color: #355C27;
+}
+
+aside{
+    float: right;
+    margin-top: 3em;
+    font-size: 1.3em;
+}
