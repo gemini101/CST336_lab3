@@ -1,7 +1,6 @@
 #wrapper{
         width:900px;
         margin: 0 auto;
-        background-color: white !important; 
     }
 
 #container{
@@ -10,24 +9,24 @@
         padding-right:5.5em;
         padding-bottom: 2em;
         border-radius: 1em;
-    
+        background-color: white !important;
     }
     
 h1{
     text-align: center;
     background-color: #8C8C8C;
-    padding-top: .5em;
-    padding-bottom: .5em;
+    padding-top: .4em;
+    padding-bottom: .4em;
     margin-left:-1.8em;
     margin-right:-1.8em;
     border-radius: .3em;
     color: white;
+    font-size:2.3em;
 }
 
 #winner{
     text-align: center;
     font-size: 1.5em;
-    margin-top:.2em;
     color: #355C27;
 }
 
