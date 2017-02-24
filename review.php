@@ -139,18 +139,32 @@ $deck = array();
  function displayWinner()
  {
      global $sums;
-     $max = $sums[0];
+     $max = 0;
      $index=0;
+     $total = 0;
+     
      for ($i=0; $i<4; $i++)
      {
-         if ($sums[$i] > $max)
+         if ( ($sums[$i] > $max) && ($sums[$i] < 43) )
          {
              $max = $sums[$i];
              $index = $i;
          }
      }
-     $index++;
-     echo "<strong>The winner is ".$index . "</strong>";
+     for ($j=0; $j<4; $j++)
+     {   
+         if(($sums[$j] < 43) && (($sums[$j] != $max))){
+             $total+= $sums[$j];
+         }
+     }
+     for ($m=0; $m<4; $m++)
+     {
+       if ( $sums[$m] == $max){
+          $num=$m+1;
+          echo "<br/>";
+          echo "<strong>" . $num . " wins ". $total . " points!!</strong>";
+       }
+     }
  }
 
 
@@ -164,8 +178,8 @@ $deck = array();
     </head>
     
      <style>
-        @import url("css/style.css");
-    </style>
+        @import url("css/styles.css");
+     </style>
     
     <body>
      <div id="wrapper">
@@ -174,7 +188,7 @@ $deck = array();
        
        <?=getHand()?>
        <div id ="winner">
-       <?=displayWinner()?>
+        <?=displayWinner()?>
        </div>
       
       </div>
