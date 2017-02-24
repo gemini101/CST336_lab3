@@ -129,7 +129,7 @@ $deck = array();
            $players[$i][] = $card;
            $sum+=$card;
          }
-         echo $sum;
+         echo "<aside>" . $sum . "</aside>";
          echo "<br />";
          $sums [] = $sum;
          $sum=0;
@@ -150,7 +150,7 @@ $deck = array();
          }
      }
      $index++;
-     echo "The winner is ".$index;
+     echo "<strong>The winner is ".$index . "</strong>";
  }
 
 
@@ -162,13 +162,22 @@ $deck = array();
     <head>
         <title> Arrays Review </title>
     </head>
+    
+     <style>
+        @import url("css/style.css");
+    </style>
+    
     <body>
-
-      <img src="img/cards/clubs/<?=rand(1,13)?>.png" />
+     <div id="wrapper">
+      <div id ="container">
+       <h1>Silverjack</h1>
+       
+       <?=getHand()?>
+       <div id ="winner">
+       <?=displayWinner()?>
+       </div>
       
-      
-      <?=getHand()?>
-      <?=displayWinner()?>
-      
+      </div>
+     </div>
     </body>
 </html>
