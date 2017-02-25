@@ -155,12 +155,14 @@ $deck = array();
      }
      $index++;
      echo "The winner is ". $index;
+     
      for ($j=0; $j<4; $j++)
      {   
          if(($sums[$j] < 43) && (($sums[$j] != $max))){
              $total+= $sums[$j];
          }
      }
+     
      for ($m=0; $m<4; $m++)
      {
        if ( $sums[$m] == $max){
@@ -169,6 +171,7 @@ $deck = array();
           echo "<strong>" . $num . " wins ". $total . " points!!</strong>";
        }
      }
+     
  }
 
 
@@ -195,13 +198,8 @@ $deck = array();
         <?=displayWinner()?>
        </div>
 
-      <img src="img/cards/clubs/<?=rand(1,13)?>.png" />
       
-      
-      <?=getHand()?>
-      <br />
-      <?=displayWinner()?>
-      
+    
       </div>
      </div>
     </body>
