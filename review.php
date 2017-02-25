@@ -83,10 +83,10 @@ $sums = array();
  
  function displayRandomImage(){
  
-   $suitArray = array("clubs", "diamonds", "hearts", "spades");
-   $randomIndex = rand(0,3);
-   $randomSuit = $suitArray[$randomIndex];
-   echo "<img src='img/cards/$randomSuit/".rand(1,13).".png' />";
+  $suitArray = array("clubs", "diamonds", "hearts", "spades");
+  $randomIndex = rand(0,3);
+  $randomSuit = $suitArray[$randomIndex];
+  echo "<img src='img/cards/$randomSuit/".rand(1,13).".png' />";
  
  }
  function getHand()
@@ -107,10 +107,12 @@ $sums = array();
            $players[$i][] = $card;
            $sum+=$card;
          }
+         if($sum < 42){
          echo $sum;
          echo "<br />";
          $sums [] = $sum;
          $sum=0;
+         }
      }
  }
  
@@ -128,7 +130,7 @@ $sums = array();
          }
      }
      $index++;
-     echo "The winner is ".$index;
+     echo "The winner is ". $index;
  }
 
 
@@ -146,7 +148,9 @@ $sums = array();
       
       
       <?=getHand()?>
+      <br />
       <?=displayWinner()?>
       
     </body>
-</html>
+</html>-
++-------------------------------------------------------+
