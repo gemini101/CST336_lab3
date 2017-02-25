@@ -104,7 +104,7 @@ $deck = array();
      $card;
      for ($i=0; $i<4; $i++)
      {
-         echo "<img src='img/characters/$characterArray(i).png'/>";
+         echo "<img src='img/characters/$characterArray[$i].png'/>";
         while ($sum<35)
          {
             
