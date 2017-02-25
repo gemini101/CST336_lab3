@@ -104,7 +104,7 @@ $deck = array();
      $card;
      for ($i=0; $i<4; $i++)
      {
-         echo "<img src='img/characters/$characterArray[i].png'/>";
+         echo "<img src='img/characters/$characterArray(i).png'/>";
         while ($sum<35)
          {
             
@@ -183,7 +183,18 @@ $deck = array();
        if ( $sums[$m] == $max){
           $num=$m+1;
           echo "<br/>";
-          echo "<strong>" . $num . " wins ". $total . " points!!</strong>";
+          if ($num==1){
+          echo "<strong>Mario wins ". $total . " points!!</strong>";
+          }
+          elseif ($num==2){
+          echo "<strong>Yoshi wins ". $total . " points!!</strong>";
+          }
+          elseif ($num==3){
+          echo "<strong>Falco wins ". $total . " points!!</strong>";
+          }
+          else{
+          echo "<strong>Kirby wins ". $total . " points!!</strong>";
+          }
        }
      }
      
