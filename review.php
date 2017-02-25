@@ -99,12 +99,21 @@ $deck = array();
  {
     $suitArray = array("clubs", "diamonds", "hearts", "spades");
     $characterArray = array("Mario", "Yoshi", "Falco", "Kirby");
+    $randomCharacter = rand(0,3);
+    $randomPick = $characterArray[$randomCharacter];
+ 
      global $players, $sums, $deck;
      $sum=0;
      $card;
      for ($i=0; $i<4; $i++)
      {
-         echo "<img src='img/characters/$characterArray[$i].png'/>";
+       echo "<img src='img/characters/$characterArray[$i].png' />";
+         // echo "<img src='img/characters/$randomPick.png'/>";
+         // unset($randomPick);
+         // array_values($randomPick); reindexes array
+         //  if(null){
+         //   echo "<img src='img/characters/$randomPick.png'/>"; 
+         //  }
         while ($sum<35)
          {
             
