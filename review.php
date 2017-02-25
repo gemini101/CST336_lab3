@@ -98,14 +98,16 @@ $deck = array();
  function getHand()
  {
     $suitArray = array("clubs", "diamonds", "hearts", "spades");
-    
+    $characterArray = array("Mario", "Yoshi", "Falco", "Kirby");
      global $players, $sums, $deck;
      $sum=0;
      $card;
      for ($i=0; $i<4; $i++)
      {
+         echo "<img src='img/characters/$characterArray[i].png'/>";
         while ($sum<35)
          {
+            
            if($deck[sizeof($deck)-1]<=13)
            {
                $Index =0;
@@ -152,9 +154,22 @@ $deck = array();
              $max = $sums[$i];
              $index = $i;
          }
+         
+     }
+     if($index == 0){
+     echo "The winner is Mario";
+     }
+     elseif($index == 1){
+     echo "The winner is Yoshi";
+     }
+     elseif($index == 2){
+     echo "The winner is Falco";
+     }
+     else{
+     echo "The winner is Kirby";
      }
      $index++;
-     echo "The winner is ". $index;
+     
      
      for ($j=0; $j<4; $j++)
      {   
