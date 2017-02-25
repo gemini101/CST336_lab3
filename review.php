@@ -88,19 +88,12 @@ $deck = array();
  
 //  function displayRandomImage(){
  
-<<<<<<< HEAD
-  $suitArray = array("clubs", "diamonds", "hearts", "spades");
-  $randomIndex = rand(0,3);
-  $randomSuit = $suitArray[$randomIndex];
-  echo "<img src='img/cards/$randomSuit/".rand(1,13).".png' />";
-=======
 //   $suitArray = array("clubs", "diamonds", "hearts", "spades");
 //   $randomIndex = rand(0,3);
 //   $randomSuit = $suitArray[$randomIndex];
 //   echo "<img src='img/cards/$randomSuit/".rand(1,13).".png' />";
  
 //  }
->>>>>>> c6a12f6e41592c14e7f5197a6438e081a6e6e790
  
  function getHand()
  {
@@ -136,12 +129,8 @@ $deck = array();
            $players[$i][] = $card;
            $sum+=$card;
          }
-<<<<<<< HEAD
-         if($sum < 42){
+         {
          echo $sum;
-=======
-         echo "<aside>" . $sum . "</aside>";
->>>>>>> c6a12f6e41592c14e7f5197a6438e081a6e6e790
          echo "<br />";
          $sums [] = $sum;
          $sum=0;
@@ -164,10 +153,8 @@ $deck = array();
              $index = $i;
          }
      }
-<<<<<<< HEAD
      $index++;
      echo "The winner is ". $index;
-=======
      for ($j=0; $j<4; $j++)
      {   
          if(($sums[$j] < 43) && (($sums[$j] != $max))){
@@ -182,7 +169,6 @@ $deck = array();
           echo "<strong>" . $num . " wins ". $total . " points!!</strong>";
        }
      }
->>>>>>> c6a12f6e41592c14e7f5197a6438e081a6e6e790
  }
 
 
@@ -200,15 +186,6 @@ $deck = array();
      </style>
     
     <body>
-<<<<<<< HEAD
-
-      <img src="img/cards/clubs/<?=rand(1,13)?>.png" />
-      
-      
-      <?=getHand()?>
-      <br />
-      <?=displayWinner()?>
-=======
      <div id="wrapper">
       <div id ="container">
        <h1><strong>Silverjack</strong></h1>
@@ -217,7 +194,13 @@ $deck = array();
        <div id ="winner">
         <?=displayWinner()?>
        </div>
->>>>>>> c6a12f6e41592c14e7f5197a6438e081a6e6e790
+
+      <img src="img/cards/clubs/<?=rand(1,13)?>.png" />
+      
+      
+      <?=getHand()?>
+      <br />
+      <?=displayWinner()?>
       
       </div>
      </div>
