@@ -46,3 +46,11 @@ aside{
     margin-top: 3em;
     font-size: 1.3em;
 }
+
+.playB{
+    background-color: green;  
+    color: black;
+    padding: 15px 32px;
+    font-size: 16px;
+    margin-left: 18em;
+}
